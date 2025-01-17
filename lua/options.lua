@@ -3,6 +3,9 @@
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
+-- Default file viewer to tree style
+vim.cmd 'let g:netrw_liststyle=3'
+
 -- Make line numbers default
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
@@ -24,13 +27,13 @@ vim.schedule(function()
 end)
 
 vim.opt.cursorline = true
-vim.opt.cursorlineopt = 'line'
+vim.opt.cursorlineopt = 'line' -- line,number,
 
 -- Enable break indent
 vim.opt.breakindent = true
 -- Indent & tabs
-vim.opt.tabstop = 2 -- spaces for tabs
-vim.opt.shiftwidth = 2 -- spaces for indent width
+vim.opt.tabstop = 4 -- spaces for tabs
+vim.opt.shiftwidth = 4 -- spaces for indent width
 vim.opt.expandtab = true -- expandtab to spaces
 vim.opt.autoindent = true -- copy indent from current line when starting new one
 
@@ -69,4 +72,4 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 15
 
--- vim: ts=2 sts=2 sw=2 et
+-- vim: ts=4 sts=4 sw=4 et
