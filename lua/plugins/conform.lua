@@ -41,7 +41,7 @@ return {
                 java = { 'clang-format' },
                 json = { 'clang-format' },
                 python = { 'black' },
-                markdown = { 'prettierd' },
+                markdown = { 'markdownlint-cli2', 'prettierd' },
                 -- Conform can also run multiple formatters sequentially
                 -- python = { "isort", "black" },
                 --
