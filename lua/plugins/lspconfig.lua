@@ -15,6 +15,7 @@ return {
     { 'Bilal2453/luvit-meta', lazy = true },
     {
         'olrtg/nvim-emmet',
+        lazy = true,
         config = function()
             vim.keymap.set({ 'n', 'v' }, '<leader>xe', require('nvim-emmet').wrap_with_abbreviation)
         end,
@@ -240,6 +241,14 @@ return {
                         syntaxProfiles = {},
                         --- @type table<string, string> [Emmet Docs](https://docs.emmet.io/customization/snippets/#variables)
                         variables = {},
+                    },
+                },
+
+                harper_ls = {
+                    settings = {
+                        ['harper-ls'] = {
+                            markdown = {},
+                        },
                     },
                 },
             }

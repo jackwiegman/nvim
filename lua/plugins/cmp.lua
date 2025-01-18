@@ -34,6 +34,14 @@ return {
             --  into multiple repos for maintenance purposes.
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-path',
+            -- {
+            --     'uga-rosa/cmp-dictionary',
+            --     opts = {
+            --         paths = { '/usr/share/dict/words' },
+            --         exact_length = 2,
+            --     },
+            -- },
+            -- 'octaltree/cmp-look',
         },
         config = function()
             -- See `:help cmp`
@@ -110,6 +118,19 @@ return {
                     { name = 'nvim_lsp' },
                     { name = 'luasnip' },
                     { name = 'path' },
+                    -- {
+                    --     name = 'dictionary',
+                    --     keyword_length = 2,
+                    -- },
+                    -- {
+                    --     name = 'look',
+                    --     keyword_length = 2,
+                    --     option = {
+                    --         convert_case = true,
+                    --         loud = true,
+                    --         dict = '/usr/share/dict/words',
+                    --     },
+                    -- },
                 },
             }
         end,
