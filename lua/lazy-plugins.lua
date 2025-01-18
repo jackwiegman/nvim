@@ -13,7 +13,6 @@
 require('lazy').setup {
     spec = {
         -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-        'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
         -- NOTE: Plugins can also be added by using a table,
         -- with the first argument being the link and the following
@@ -24,39 +23,50 @@ require('lazy').setup {
         -- modular approach: using `require 'path/name'` will
         --
         -- include a plugin definition from file lua/path/name.lua
-        -- require 'plugins/gitsigns',
-        -- require 'plugins/which-key',
-        -- require 'plugins/telescope',
-        -- require 'plugins/lspconfig',
-        -- require 'plugins/conform',
-        -- require 'plugins/cmp',
-        -- -- require 'kickstart/plugins/tokyonight',
-        -- require 'plugins/todo-comments',
-        -- require 'plugins/mini',
-        -- require 'plugins/treesitter',
-        -- require 'plugins.debug',
-        -- require 'plugins.indent_line',
-        -- require 'plugins.lint',
-        -- require 'plugins.autopairs',
-        -- require 'plugins.neo-tree',
-        -- require 'plugins.catppuccin',
-        -- require 'plugins.markdown',
         --
-        { import = 'plugins' },
-        -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
-        -- init.lua. If you want these files, they are in the repository, so you can just download them and
-        -- place them in the correct locations.
-        -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
-        --
-        --  Here are some example plugins that I've included in the Kickstart repository.
-        --  Uncomment any of the lines below to enable them (you will need to restart nvim).
-        --
-        -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-        --    This is the easiest way to modularize your config.
-        --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-        --
-        -- { import = 'custom.plugins' },
-        --
+        -- Pick which colorscheme here
+        require 'plugins.colorscheme',
+
+        -- [Random Misc]
+        'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+        -- Git signs in the gutter
+        require 'plugins/gitsigns',
+        -- Keymap hint popup
+        require 'plugins/which-key',
+        -- Highlights todo comments and maybe some other stuff idrk
+        require 'plugins/todo-comments',
+        -- Various small plugins, surround, extra keymaps, etc.
+        require 'plugins/mini',
+        -- Add indent lines even on blank lines
+        require 'plugins.indent_line',
+        -- Auto pair stuff
+        require 'plugins.autopairs',
+
+        -- File viewer "\" keymap
+        require 'plugins.neo-tree',
+        -- Fuzzy finder and move around files
+        require 'plugins/telescope',
+
+        -- lspconfig plugin, mason, and configuration for other language servers
+        require 'plugins/lspconfig',
+        -- Formatting
+        require 'plugins/conform',
+        -- Autocomplete
+        require 'plugins/cmp',
+        -- Syntax highlighting
+        require 'plugins/treesitter',
+        -- Linter by filetype and the autocommand to make it work
+        require 'plugins.lint',
+
+        -- Dap plugins, haven't really gotten there.
+        require 'plugins.debug',
+
+        -- Markdown Plugins
+        -- markdown-render,
+        require 'plugins.markdown',
+        require 'plugins.obsidian',
+
+-
         -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
         -- Or use telescope!
         -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`

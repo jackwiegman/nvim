@@ -119,6 +119,7 @@ return {
                     { name = 'luasnip' },
                     { name = 'path' },
                     { name = 'render-markdown' },
+                    { name = 'obsidian' },
                     -- {
                     --     name = 'dictionary',
                     --     keyword_length = 2,
