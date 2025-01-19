@@ -29,6 +29,8 @@ return {
 
             -- Useful for getting pretty icons, but requires a Nerd Font.
             { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+            { 'nvim-lua/popup.nvim' },
+            { 'nvim-telescope/telescope-media-files.nvim' },
         },
         config = function()
             -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -59,12 +61,21 @@ return {
                 -- defaults = {
                 --   mappings = {
                 --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-                --   },
+                --   }
                 -- },
                 -- pickers = {}
+                --
+                require('telescope').load_extension 'media_files',
                 extensions = {
                     ['ui-select'] = {
                         require('telescope.themes').get_dropdown(),
+                    },
+                    media_files = {
+                        -- filetypes whitelist
+                        -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+                        filetypes = { 'png', 'webp', 'jpg', 'jpeg' },
+                        -- find command (defaults to `fd`)
+                        find_cmd = 'rg',
                     },
                 },
             }
