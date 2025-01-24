@@ -10,13 +10,13 @@ return {
                     light = 'latte',
                     dark = 'mocha',
                 },
-                transparent_background = false, -- disables setting the background color.
+                transparent_background = true, -- disables setting the background color.
                 show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
                 term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
                 dim_inactive = {
                     enabled = false, -- dims the background color of inactive window
                     shade = 'dark',
-                    percentage = 0.15, -- percentage of the shade to apply to the inactive window
+                    percentage = 0.25, -- percentage of the shade to apply to the inactive window
                 },
                 no_italic = false, -- Force no italic
                 no_bold = false, -- Force no bold
@@ -78,9 +78,10 @@ return {
                     indent_blankline = {
                         enabled = true,
                         scope_color = 'text', -- catppuccin color (eg. 'lavender') Default: text
-                        color_indent_levels = false,
+                        color_indent_levels = true,
                     },
                     neotree = true,
+                    markdown = true,
                     render_markdown = true,
                 },
             }
