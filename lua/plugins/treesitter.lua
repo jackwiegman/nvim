@@ -10,6 +10,7 @@ return {
                 'c',
                 'css',
                 'diff',
+                'doxygen',
                 'html',
                 'javascript',
                 'lua',
