@@ -42,6 +42,13 @@ return {
             --     },
             -- },
             -- 'octaltree/cmp-look',
+            {
+                'paopaol/cmp-doxygen',
+                dependencies = {
+                    'nvim-treesitter/nvim-treesitter',
+                    'nvim-treesitter/nvim-treesitter-textobjects',
+                },
+            },
         },
         config = function()
             -- See `:help cmp`
@@ -120,6 +127,7 @@ return {
                     { name = 'path' },
                     { name = 'render-markdown' },
                     { name = 'obsidian' },
+                    { name = 'doxygen' },
                     -- {
                     --     name = 'dictionary',
                     --     keyword_length = 2,
