@@ -184,8 +184,22 @@ return {
             --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
             --  - settings (table): Override the default settings passed when initializing the server.
             --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+            local fallback = {}
             local servers = {
-                clangd = {},
+                -- Check if we're in c or c++ before we do a fallback, gets rid of "I can't do c++17" in c files
+                clangd = {
+                    cmd = { 'clangd', '--background-index', '--clang-tidy', '--log=verbose' },
+                    func = function(ft)
+                        if ft == 'c' then
+                            fallback = { '-std=c99' }
+                        elseif ft == 'cpp' then
+                            fallback = { '-std=c++17' }
+                        end
+                    end,
+                    init_options = {
+                        fallbackFlags = { fallback },
+                    },
+                },
                 -- gopls = {},
                 pyright = {},
                 -- rust_analyzer = {},
@@ -266,6 +280,7 @@ return {
             vim.list_extend(ensure_installed, {
                 'stylua', -- Used to format Lua code
                 'prettierd', -- General formatter for a bunch of languages
+                'clang-format',
             })
             require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

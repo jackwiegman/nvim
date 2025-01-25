@@ -27,35 +27,19 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- [[ Telekasten Mappings]]
--- Launch panel if nothing is typed after <leader>z
-vim.keymap.set('n', '<leader>z', '<cmd>Telekasten panel<CR>')
-
--- Most used functions
-vim.keymap.set('n', '<leader>zf', '<cmd>Telekasten find_notes<CR>')
-vim.keymap.set('n', '<leader>zg', '<cmd>Telekasten search_notes<CR>')
-vim.keymap.set('n', '<leader>zd', '<cmd>Telekasten goto_today<CR>')
-vim.keymap.set('n', '<leader>zz', '<cmd>Telekasten follow_link<CR>')
-vim.keymap.set('n', '<leader>zn', '<cmd>Telekasten new_note<CR>')
-vim.keymap.set('n', '<leader>zc', '<cmd>Telekasten show_calendar<CR>')
-vim.keymap.set('n', '<leader>zb', '<cmd>Telekasten show_backlinks<CR>')
-vim.keymap.set('n', '<leader>zI', '<cmd>Telekasten insert_img_link<CR>')
-
--- Call insert link automatically when we start typing a link
-vim.keymap.set('i', '[[', '<cmd>Telekasten insert_link<CR>')
-
--- [[ Basic Autocommands ]]
---  See `:help lua-guide-autocommands`
-
--- Highlight when yanking (copying) text
---  Try it with `yap` in normal mode
---  See `:help vim.highlight.on_yank()`
-vim.api.nvim_create_autocmd('TextYankPost', {
-    desc = 'Highlight when yanking (copying) text',
-    group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-    callback = function()
-        vim.highlight.on_yank()
-    end,
-})
-
--- vim: ts=4 sts=4 sw=4 et
+-- -- [[ Telekasten Mappings]]
+-- -- Launch panel if nothing is typed after <leader>z
+-- vim.keymap.set('n', '<leader>z', '<cmd>Telekasten panel<CR>')
+--
+-- -- Most used functions
+-- vim.keymap.set('n', '<leader>zf', '<cmd>Telekasten find_notes<CR>')
+-- vim.keymap.set('n', '<leader>zg', '<cmd>Telekasten search_notes<CR>')
+-- vim.keymap.set('n', '<leader>zd', '<cmd>Telekasten goto_today<CR>')
+-- vim.keymap.set('n', '<leader>zz', '<cmd>Telekasten follow_link<CR>')
+-- vim.keymap.set('n', '<leader>zn', '<cmd>Telekasten new_note<CR>')
+-- vim.keymap.set('n', '<leader>zc', '<cmd>Telekasten show_calendar<CR>')
+-- vim.keymap.set('n', '<leader>zb', '<cmd>Telekasten show_backlinks<CR>')
+-- vim.keymap.set('n', '<leader>zI', '<cmd>Telekasten insert_img_link<CR>')
+--
+-- -- Call insert link automatically when we start typing a link
+-- vim.keymap.set('i', '[[', '<cmd>Telekasten insert_link<CR>')
