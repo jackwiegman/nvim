@@ -91,6 +91,11 @@ require('lazy').setup {
                 -- require('alpha').setup(require('alpha.themes.startify').config)
             end,
         },
+        {
+            'catgoose/nvim-colorizer.lua',
+            event = 'BufReadPre',
+            opts = {},
+        },
     },
     ui = {
         backdrop = 75,

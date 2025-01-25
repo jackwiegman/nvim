@@ -53,7 +53,7 @@ return {
         },
         init = function()
             -- setup must be called before loading
-            vim.cmd.colorscheme 'dracula'
+            vim.cmd.colorscheme 'dracula-soft'
         end,
     },
 }
