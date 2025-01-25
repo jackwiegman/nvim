@@ -31,9 +31,9 @@ return {
             -- show the '~' characters after the end of buffers
             show_end_of_buffer = true, -- default false
             -- use transparent background
-            transparent_bg = false, -- default false
+            transparent_bg = true, -- default false
             -- set custom lualine background color
-            lualine_bg_color = '#44475a', -- default nil
+            lualine_bg_color = '#44475a', -- default nil\
             -- set italic comment
             italic_comment = true, -- default false
             -- overrides the default highlights with table see `:h synIDattr`
@@ -54,7 +54,6 @@ return {
         init = function()
             -- setup must be called before loading
             vim.cmd.colorscheme 'dracula'
-            -- vim.cmd.colorscheme 'catppuccin-frappe'
         end,
     },
 }

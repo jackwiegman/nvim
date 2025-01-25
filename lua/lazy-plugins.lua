@@ -20,8 +20,7 @@ require('lazy').setup {
         -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
 
         -- NOTE: Plugins can also be added by using a table,
-        -- with the first argument being the link and the following
-        -- keys can be used to configure plugin behavior/loading/etc.
+        -- with the first argument being the link and the following keys can be used to configure plugin behavior/loading/etc.
         --
         -- Use `opts = {}` to force a plugin to be loaded.
         --
@@ -78,6 +77,19 @@ require('lazy').setup {
             'danymat/neogen',
             config = true,
             -- opts = { snippet_engine = 'luasnip' },
+        },
+
+        {
+            'goolord/alpha-nvim',
+            dependencies = {
+                'echasnovski/mini.icons',
+                'nvim-lua/plenary.nvim',
+            },
+            config = function()
+                require('alpha').setup(require('alpha.themes.theta').config)
+                -- require('alpha').setup(require('alpha.themes.dashboard').config)
+                -- require('alpha').setup(require('alpha.themes.startify').config)
+            end,
         },
     },
     ui = {
