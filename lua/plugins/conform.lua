@@ -33,15 +33,15 @@ return {
             end,
             formatters_by_ft = {
                 lua = { 'stylua' },
-                html = { 'prettierd' },
-                css = { 'prettierd' },
-                javascript = { 'prettierd' },
+                html = { 'prettierd', 'prettier' },
+                css = { 'prettierd', 'prettier' },
+                javascript = { 'prettierd', 'prettier' },
                 c = { 'clang-format' },
                 cpp = { 'clang-format' },
                 java = { 'clang-format' },
-                json = { 'clang-format' },
+                json = { 'prettierd', 'prettier' },
                 python = { 'black' },
-                markdown = { 'markdownlint-cli2', 'prettierd' },
+                markdown = { 'markdownlint-cli2', 'markdownlint-cli2' },
                 -- Conform can also run multiple formatters sequentially
                 -- python = { "isort", "black" },
                 --

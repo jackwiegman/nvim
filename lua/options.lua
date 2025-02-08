@@ -36,6 +36,8 @@ vim.opt.tabstop = 4 -- spaces for tabs
 vim.opt.shiftwidth = 4 -- spaces for indent width
 vim.opt.expandtab = true -- expandtab to spaces
 vim.opt.autoindent = true -- copy indent from current line when starting new one
+vim.opt.shiftround = true -- Round indentation to multiple of shiftwidth when shifting lines
+vim.opt.smartindent = true
 
 -- Save undo history
 vim.opt.undofile = true
@@ -68,6 +70,9 @@ vim.opt.inccommand = 'split'
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true
-
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 12
+vim.opt.sidescrolloff = 5
+
+vim.opt.textwidth = 99
+vim.opt.colorcolumn = '100'

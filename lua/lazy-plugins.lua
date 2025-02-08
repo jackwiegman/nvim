@@ -76,7 +76,7 @@ require('lazy').setup {
         {
             'danymat/neogen',
             config = true,
-            -- opts = { snippet_engine = 'luasnip' },
+            opts = { snippet_engine = 'luasnip' },
         },
 
         {
